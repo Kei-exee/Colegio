@@ -1,0 +1,48 @@
+/*VARIABLES DE COLOR*/
+:root {
+    --hsba-blue: #002b57;         /* Azul institucional oscuro */
+    --blue: #0043f1;              /* Azul primario */
+    --light-blue: #80A1F8;        /* Azul claro */
+    --black: #000014;             /* Negro profundo */
+    --white: #FDFDFD;             /* Blanco base */
+    --light-grey: #EAEAEA;        /* Gris claro */
+    --gray: #a3a3a379;            /* Gris translúcido */
+  }
+
+/* === TIPOGRAFÍA Y ESTILOS GENERALES === */
+body {
+    font-family: 'Lato', sans-serif; /* Establece la fuente principal del sitio */
+    overflow-x: hidden;              /* Oculta el scroll horizontal para evitar desbordamientos en ejes X */
+}
+
+/* === ESTILOS PARA LOS ENLACES DE NAVEGACIÓN === */
+nav a {
+    padding: 12px 16px; /* Añade espaciado interno (padding) en los enlaces de navegación */
+}
+
+/* === ESTILOS PARA CUADROS DE MATERIAS === */
+.cuadros {
+    background-color: var(--light-blue); /* Fondo azul claro para los cuadros */
+    color: var(--hsba-blue);             /* Texto azul oscuro institucional */
+}
+
+/* === OCULTAR BARRA DE SCROLL (opcional para estética limpia) === */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento horizontal en navegadores WebKit (Chrome, Safari) */
+}
+.scrollbar-hide {
+    -ms-overflow-style: none; /* Oculta el scrollbar en Internet Explorer y Edge antiguos */
+    scrollbar-width: none;    /* Oculta el scrollbar en Firefox moderno */
+}
+
+/* === CONTENEDORES DE SCROLL ANIMADO === */
+#scrollRow1, #scrollRow2 {
+    overflow: hidden;     /* Oculta cualquier contenido que se desborde horizontalmente */
+    position: relative;   /* Posicionamiento relativo para contener elementos posicionados dentro */
+}
+
+#scrollRow1Inner, #scrollRow2Inner {
+    display: flex;                        /* Organiza los elementos hijos en línea horizontal */
+    transition: transform 0.1s ease-out;  /* Agrega una transición suave al movimiento horizontal */
+    will-change: transform;              /* Mejora el rendimiento indicando al navegador que este elemento será animado */
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventos</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <!-- AOS Animaciones -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="inicio.css">
+  <link rel="stylesheet" type="text/css" href="css/evento.css">
+
+  <!-- React y Babel CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Flowbite -->
+  <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+
+  <!-- jsPDF y AutoTable -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+  <!-- Script personalizado -->
+  <script src="nievelesEdu.js" defer></script>
+  <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
+</head>
+
+<body class="overflow-x-hidden bg-gray-50 text-gray-800 font-sans pt-20 font-bold">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-md z-50 -md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+
+      <div class="flex items-center gap-3">
+        <img src="img/logoCole.png" alt="Logo" class="h-20 w-auto">
+        <span class="text-black text-xl sm:text-2xl font-bold">El Colegio del Futuro</span>
+      </div>
+
+      <button id="menu-toggle" class="md:hidden text-blue-600 focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <ul id="nav-menu"
+        class="hidden flex-col absolute top-full right-4 left-4 mt-4 bg-white text-center -lg  py-4 gap-6z-40
+                 md:flex md:flex-row md:static md:mt-0 md:bg-transparent md:-none md:rounded-none md:py-0 md:gap-10 md:text-left">
+        <li><a href="inicio.html" class="hover:text-blue-600 transition">Inicio</a></li>
+        <li><a href="nosotros.html" class="hover:text-blue-600 transition">Nosotros</a></li>
+        <li><a href="eventos.html" class="hover:text-blue-600 transition">Eventos</a></li>
+        <li><a href="#" class="hover:text-blue-600 transition">Contacto</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <main class="pt-28 max-w-7xl mx-auto px-4">
+  <!-- Buscador -->
+  <div class="mb-6">
+    <input type="text" id="searchInput" placeholder="Buscar noticias o eventos"
+      class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-200" />
+  </div>
+
+  <!-- Grid de eventos -->
+  <div id="newsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- TARJETA 1 -->
+    <div class="bg-white shadow-md rounded overflow-hidden">
+      <img src="img/1.webp" alt="Evento 1" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-lg font-bold">Convenio de colaboración con la Universidad Europea</h3>
+        <p class="text-sm text-gray-600 mt-2">El grupo educativo del que formamos parte, Globeducate, ha firmado un convenio de colaboración con la Universidad Europea dirigido a reforzar el apoyo académico y la orientación universitaria de los estudiantes de todos los colegios Globeducate en España y Andorra, entre los que se encuentra nuestra […]</p>
+        <a href="//www.youtube.com/watch?v=RzzlxFIzNjU" target="_blank"
+          class="inline-block mt-3 px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700">VER MÁS</a>
+      </div>
+    </div>
+    <!--TARJETA 2-->
+        <div class="bg-white shadow-md rounded overflow-hidden">
+      <img src="img/2.webp" alt="Evento 1" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-lg font-bold">3ª sesión XI Jornada de Innovación Educativ</h3>
+        <p class="text-sm text-gray-600 mt-2">El pasado 11 de marzo se celebró la tercera sesión de la XI Jornada de Innovación Educativa que organiza el Colegio Areteia, este año en el marco de la celebración de su 45º aniversario. Estas jornadas formativas para docentes y familias, tratan de abrir un espacio de reflexión sobre cuestiones de máximo […]</p>
+        <a href="https://www.youtube.com/watch?v=qtTpJAYMBy" target="_blank"
+          class="inline-block mt-3 px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700">VER MÁS</a>
+      </div>
+    </div>
+    <!--TARJETA 3-->
+
+        <div class="bg-white shadow-md rounded overflow-hidden">
+      <img src="img/3.webp" alt="Evento 1" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-lg font-bold">2ª sesión XI Jornada de Innovación Educativa</h3>
+        <p class="text-sm text-gray-600 mt-2">Las pantallas han llegado a nuestras vidas para quedarse. El impacto que las nuevas tecnologías ha generado en el día a día aún necesita cierta perspectiva histórica para poder calibrarse, pero es un hecho que, con las llegadas de Internet primero, de los dispositivos inteligentes […]</p>
+        <a href="https://www.youtube.com/watch?v=hFYnHT62u4s" target="_blank"
+          class="inline-block mt-3 px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700">VER MÁS</a>
+      </div>
+    </div>
+
+    <!--TARJETA 4-->
+
+           <div class="bg-white shadow-md rounded overflow-hidden">
+      <img src="img/4.webp" alt="Evento 1" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-lg font-bold">XI Jornadas de Innovación Educativa</h3>
+        <p class="text-sm text-gray-600 mt-2">El pasado día 14 de enero, en el marco de la celebración del 45º aniversario del Colegio Areteia, se inauguraron las XI Jornadas de Innovación Educativa, de carácter formativo para profesores y familias. Estas jornadas, que se celebran con carácter anual desde el año 2012, se diseñan cada año con el fin de […]</p>
+
+        <a href="https://www.youtube.com/watch?v=awq-Xh2hZI8" target="_blank"
+          class="inline-block mt-3 px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700">VER MÁS</a>
+      </div>
+    </div>
+
+    <!--TARJETA 5-->    
+           <div class="bg-white shadow-md rounded overflow-hidden">
+      <img src="img/5.webp" alt="Evento 1" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-lg font-bold">¿Necesitas un cambio de colegio? Descubre el enfoque?</h3>
+        <p class="text-sm text-gray-600 mt-2">Cada niño es único en el mundo y eso es lo que les hace especiales. No existen dos iguales, por eso la educación no debería ser un modelo único para todos. Esto es algo que llevamos por bandera en el Colegio Areteia, donde sabemos que cambiar de colegio es la mejor decisión par garantizar que […]</p>
+
+        <a href="https://www.youtube.com/watch?v=ZWsakg7KjQU" target="_blank"
+          class="inline-block mt-3 px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700">VER MÁS</a>
+      </div>
+    </div>
+    <!--TARJETA 6-->
+               <div class="bg-white shadow-md rounded overflow-hidden">
+      <img src="img/6.webp" alt="Evento 1" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-lg font-bold">Extraescolar Robótica en Alcobendas: Nuestras</h3>
+        <p class="text-sm text-gray-600 mt-2">Pensar en extraescolares cada inicio de curso es siempre un desafío: ¿haces caso a los gustos del niño o apuestas por la primera clase que te permita conciliar sus horarios con los tuyos? La respuesta es clara: dentro de las mejores opciones para su desarrollo, las familias deberían dejarle decidir.  El fútbol o el baile […]</p>
+
+
+        <a href="https://www.youtube.com/watch?v=fXjIMsILL9c" target="_blank"
+          class="inline-block mt-3 px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700">VER MÁS</a>
+      </div>
+    </div>
+    </div>
+  </div>
+  </main>
+
+  <!--footer-->
+  <footer class="bg-white dark:bg-gray-900">
+    <div class="mx-auto w-full max-w-screen-xl">
+      <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+        <div>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Directorio</h2>
+          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <li class="mb-4">
+              <a href="inicio.html" class=" hover:underline">Inico</a>
+            </li>
+            <li class="mb-4">
+              <a href="Nosotros.html" class="hover:underline">Nosotros</a>
+            </li>
+            <li class="mb-4">
+              <a href="eventos.html" class="hover:underline">Eventos</a>
+            </li>
+            <li class="mb-4">
+              <a href="#" class="hover:underline">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        
+       <!-- Redes sociales -->
+<div>
+  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Redes</h2>
+  <ul class="text-gray-500 dark:text-gray-400 font-medium">
+    <li class="mb-4">
+      <a href="#" class="hover:underline">WhatsApp</a>
+    </li>
+    <li class="mb-4">
+      <a href="https://x.com/" class="hover:underline" target="_blank">Twitter</a>
+    </li>
+    <li class="mb-4">
+      <a href="https://www.facebook.com/" class="hover:underline" target="_blank">Facebook</a>
+    </li>
+    <li class="mb-4">
+      <a href="https://www.linkedin.com/" class="hover:underline" target="_blank">LinkedIn</a>
+    </li>
+  </ul>
+</div>
+
+<!-- Contacto directo -->
+<div>
+  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contáctanos</h2>
+  <ul class="text-gray-500 dark:text-gray-400 font-medium">
+    <li class="mb-4">
+      <a href="mailto:ColegioDelFuturo@edu.gt" class="block hover:underline">ColegioDelFuturo@edu.gt</a>
+    </li>
+    <li class="mb-4">
+      <a href="tel:+50214151617" class="block hover:underline">+502 14151617</a>
+    </li>
+    <li class="mb-4">
+      <a href="tel:+50289562312" class="block hover:underline">+502 89562312</a>
+    </li>
+  </ul>
+</div>
+  </footer>
+  <script src="js/formulario.js"></script>
+</body>
+</html>
